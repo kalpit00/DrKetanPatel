@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Ketan Patel & Dr. Reena Patel | Ophthalmic Surgeons",
+  title: "Mona Eye Hospital | Dr. Ketan Patel & Dr. Reena Patel",
   description: "Veteran M.S Ophthalmic Surgeons with 25 years of experience in Phacosurgery and Cataract Operations",
   keywords: "ophthalmologist, eye doctor, cataract surgery, phacosurgery, eye care, Vadodara, Gujarat",
 };
