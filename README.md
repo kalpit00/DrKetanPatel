@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mona Eye Hospital - Portfolio Website
 
-## Getting Started
+![Mona Eye Hospital Logo](public/images/favicon.ico)
 
-First, run the development server:
+## 🌐 Live Website
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit the live website: [Mona Eye Hospital](https://dr-ketan-patel.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📋 Project Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This is the official portfolio website for Mona Eye Hospital, featuring Dr. Ketan Patel and Dr. Reena Patel, veteran M.S. Ophthalmic Surgeons with 25 years of experience in Phacosurgery and Cataract Operations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The website is designed as a modern, responsive single-page application that showcases the doctors' expertise, services offered, and provides easy contact options for potential patients.
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Responsive Design**: Optimized for all device sizes from mobile to desktop
+- **Modern UI/UX**: Clean interface with smooth scrolling and intuitive navigation
+- **Interactive Elements**: Clickable phone numbers, responsive navigation
+- **Service Showcase**: Detailed information about ophthalmology services
+- **Contact Form**: Easy-to-use form for patient inquiries
+- **Doctor Profiles**: Professional information about both doctors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js 14**: React framework with App Router for optimized rendering and routing
+- **TypeScript**: For type-safe code and better developer experience
+- **Tailwind CSS**: For responsive, utility-first styling
+- **React**: Component-based UI development
+- **Montserrat & Poppins Fonts**: For typography
+- **SVG Icons**: Custom icons for services and UI elements
+- **Responsive Images**: Optimized for different screen sizes
+- **CSS Gradients**: For modern visual effects
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Node.js 18.x or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kalpit00/DrKetanPatel.git
+   cd DrKetanPatel
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📁 Project Structure
+
+- `src/app`: Main application files, including layout and page components
+- `src/components`: Reusable UI components
+  - `layout`: Layout components like Navbar and Footer
+  - `sections`: Main page sections (About, Services, Contact)
+- `public/images`: Image assets including doctor photos and service icons
+
+## 📱 Responsive Design
+
+The website is fully responsive with carefully crafted breakpoints:
+- Mobile: Up to 640px
+- Tablet: 641px to 1024px
+- Desktop: 1025px and above
+
+## 🔧 Customization
+
+The website can be easily customized by modifying:
+- Color schemes in the Tailwind configuration
+- Content in the section components
+- Images in the public directory
+
+## 📄 License
+
+This project is proprietary and created specifically for Mona Eye Hospital.
+
+## 👥 Credits
+
+Designed and developed for Dr. Ketan Patel and Dr. Reena Patel of Mona Eye Hospital.
