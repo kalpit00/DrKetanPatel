@@ -42,12 +42,14 @@ The website is designed as a modern, responsive single-page application that sho
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/kalpit00/DrKetanPatel.git
    cd DrKetanPatel
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
@@ -55,6 +57,7 @@ The website is designed as a modern, responsive single-page application that sho
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    # or
@@ -74,6 +77,7 @@ The website is designed as a modern, responsive single-page application that sho
 ## 📱 Responsive Design
 
 The website is fully responsive with carefully crafted breakpoints:
+
 - Mobile: Up to 640px
 - Tablet: 641px to 1024px
 - Desktop: 1025px and above
@@ -81,6 +85,7 @@ The website is fully responsive with carefully crafted breakpoints:
 ## 🔧 Customization
 
 The website can be easily customized by modifying:
+
 - Color schemes in the Tailwind configuration
 - Content in the section components
 - Images in the public directory
@@ -91,4 +96,4 @@ This project is proprietary and created specifically for Mona Eye Hospital.
 
 ## 👥 Credits
 
-Designed and developed for Dr. Ketan Patel and Dr. Reena Patel of Mona Eye Hospital.
+Designed and developed for Dr. Ketan Patel and Dr. Reena Patel of Mona Eye Hospital, by Kalpit Patel.
