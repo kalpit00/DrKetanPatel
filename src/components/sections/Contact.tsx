@@ -46,15 +46,15 @@ interface CarouselImage {
 
 const SimpleCarousel = ({ images }: { images: CarouselImage[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   }, [images.length]);
 
   const goToPrev = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   }, [images.length]);
@@ -68,41 +68,65 @@ const SimpleCarousel = ({ images }: { images: CarouselImage[] }) => {
           alt={images[currentIndex].alt}
           fill
           sizes="100%"
-          style={images[currentIndex].style || {
-            objectFit: "cover",
-            objectPosition: "center"
-          }}
+          style={
+            images[currentIndex].style || {
+              objectFit: "cover",
+              objectPosition: "center",
+            }
+          }
         />
       </div>
-      
+
       {/* Navigation buttons */}
       <button
         onClick={goToPrev}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 text-white rounded-r-md hover:bg-black/70 transition-colors"
         aria-label="Previous image"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
-      
+
       <button
         onClick={goToNext}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 text-white rounded-l-md hover:bg-black/70 transition-colors"
         aria-label="Next image"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       </button>
-      
+
       {/* Indicators */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full ${index === currentIndex ? 'bg-white' : 'bg-white/50'}`}
+            className={`w-2 h-2 rounded-full ${
+              index === currentIndex ? "bg-white" : "bg-white/50"
+            }`}
             aria-label={`Go to image ${index + 1}`}
           />
         ))}
@@ -162,43 +186,85 @@ export const Contact: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative">
-          <span className="text-white relative z-10">
-            Contact Us
-          </span>
+          <span className="text-white relative z-10">Contact Us</span>
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10 blur-xl -z-10 transform -translate-y-1/4 scale-150"></div>
         </h2>
 
         {/* Phone Numbers Card */}
         <div className="bg-gradient-to-r from-black via-red-900 to-black rounded-lg shadow-lg p-6 sm:p-8 border border-red-800 mb-8">
-          <h3 className="text-xl font-semibold text-white mb-4 text-center">Call Us Directly</h3>
+          <h3 className="text-xl font-semibold text-white mb-4 text-center">
+            Call Us Directly
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="text-center">
-              <a href="tel:+919824030154" className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors">
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <a
+                href="tel:+919824030154"
+                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors"
+              >
+                <svg
+                  className="w-4 h-4 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
                 </svg>
                 9824030154
               </a>
             </div>
             <div className="text-center">
-              <a href="tel:+919898485037" className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors">
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+              <a
+                href="tel:+919898485037"
+                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors"
+              >
+                <svg
+                  className="w-4 h-4 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
                 9898485037
               </a>
             </div>
             <div className="text-center">
-              <a href="tel:+912652412748" className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors">
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <a
+                href="tel:+912652412748"
+                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors"
+              >
+                <svg
+                  className="w-4 h-4 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
                 </svg>
                 02652412748
               </a>
             </div>
           </div>
         </div>
-        
+
         {/* Contact Form */}
         <div className="bg-gradient-to-r from-black via-blue-900 to-black rounded-lg shadow-lg p-6 sm:p-8 border border-blue-800">
           <h3 className="text-2xl font-bold text-center text-white mb-6">
@@ -210,7 +276,7 @@ export const Contact: React.FC = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-blue-300 mb-1"
+                className="block text-sm font-medium text-blue-200 mb-2"
               >
                 Name
               </label>
@@ -219,7 +285,7 @@ export const Contact: React.FC = () => {
                 id="name"
                 name="name"
                 value={name}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-gray-900 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none bg-gradient-to-r from-gray-900 to-gray-800"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-black bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r"
                 placeholder="Your Name"
                 required
                 onChange={handleChange}
@@ -230,7 +296,7 @@ export const Contact: React.FC = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-blue-200 mb-2"
               >
                 Email
               </label>
@@ -239,7 +305,7 @@ export const Contact: React.FC = () => {
                 id="email"
                 name="email"
                 value={email}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-gray-900 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none bg-gradient-to-r from-gray-900 to-gray-800"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r "
                 placeholder="Your Email"
                 required
                 onChange={handleChange}
@@ -250,7 +316,7 @@ export const Contact: React.FC = () => {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-blue-200 mb-2"
               >
                 Phone
               </label>
@@ -259,7 +325,7 @@ export const Contact: React.FC = () => {
                 id="phone"
                 name="phone"
                 value={phone}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-gray-900 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none bg-gradient-to-r from-gray-900 to-gray-800"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r"
                 placeholder="Your Phone Number"
                 required
                 onChange={handleChange}
@@ -270,7 +336,7 @@ export const Contact: React.FC = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-blue-200 mb-2"
               >
                 Message
               </label>
@@ -279,7 +345,7 @@ export const Contact: React.FC = () => {
                 name="message"
                 value={message}
                 rows={5}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-gray-900 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none bg-gradient-to-r from-gray-900 to-gray-800"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r"
                 placeholder="Your Message"
                 required
                 onChange={handleChange}
@@ -326,32 +392,32 @@ export const Contact: React.FC = () => {
             {/* Hospital Images Carousel */}
             <div>
               <div className="h-[350px] sm:h-96 rounded-lg overflow-hidden shadow-lg">
-                <SimpleCarousel 
+                <SimpleCarousel
                   images={[
                     {
                       src: "/images/entrance.jpg",
                       alt: "Hospital Entrance with Timings",
                       style: {
                         objectFit: "cover",
-                        objectPosition: "top"
-                      }
+                        objectPosition: "top",
+                      },
                     },
                     {
                       src: "/images/hospital.jpg",
                       alt: "Hospital Interior",
                       style: {
                         objectFit: "cover",
-                        objectPosition: "center"
-                      }
+                        objectPosition: "center",
+                      },
                     },
                     {
                       src: "/images/street.png",
                       alt: "Hospital Street View",
                       style: {
                         objectFit: "cover",
-                        objectPosition: "center"
-                      }
-                    }
+                        objectPosition: "center",
+                      },
+                    },
                   ]}
                 />
               </div>

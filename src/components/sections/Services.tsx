@@ -30,23 +30,25 @@ export const Services: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative">
-          <span className="text-white relative z-10">
-            Our Services
-          </span>
+          <span className="text-white relative z-10">Our Services</span>
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10 blur-xl -z-10 transform -translate-y-1/4 scale-150"></div>
         </h2>
         <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-          With over <span className="font-medium text-red-400">25 years of experience</span>, our doctors provide exceptional eye
-          care services using the latest techniques and technologies.
+          With over{" "}
+          <span className="font-medium text-red-400">
+            25 years of experience
+          </span>
+          , our doctors provide exceptional eye care services using the latest
+          techniques and technologies.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-full overflow-hidden">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-black to-purple-900 rounded-lg shadow-lg p-3 sm:p-4 md:p-6 transition-transform duration-300 hover:-translate-y-2 card-hover border border-purple-800"
+              className="bg-gradient-to-br from-purple-900 to-black rounded-lg shadow-lg p-3 sm:p-4 md:p-6 transition-transform duration-300 hover:-translate-y-2 card-hover"
             >
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-red-800 to-red-950 rounded-full flex items-center justify-center border border-red-700 shadow-inner">
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-red-800 to-red-950 rounded-full flex items-center justify-center shadow-inner">
                 {service.icon ? (
                   <Image
                     src={service.icon}
@@ -74,12 +76,14 @@ export const Services: React.FC = () => {
               <h3 className="text-xl font-bold text-center bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-300 text-center leading-relaxed">{service.description}</p>
+              <p className="text-gray-300 text-center leading-relaxed">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-16 bg-gradient-to-r from-black via-purple-900 to-black rounded-lg shadow-lg p-4 sm:p-8 border border-purple-900">
+        <div className="mt-8 sm:mt-16 bg-gradient-to-r from-black via-purple-900 to-black rounded-lg shadow-lg p-4 sm:p-8 border border-purple-800">
           <h3 className="text-2xl font-bold text-center text-white mb-6 tracking-tight">
             Additional Eye Care Services
           </h3>
@@ -95,7 +99,7 @@ export const Services: React.FC = () => {
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-black to-purple-900 hover:from-gray-900 hover:to-purple-800 rounded-lg shadow p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1 border border-purple-900 hover:border-purple-700"
+                className="bg-gradient-to-br from-purple-900 to-black hover:from-gray-900 hover:to-purple-800 rounded-lg shadow p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
               >
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-700 via-red-800 to-black flex items-center justify-center text-white mr-3 border border-red-800">
@@ -114,7 +118,9 @@ export const Services: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-center bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent font-medium">{service}</p>
+                  <p className="text-center bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent font-medium">
+                    {service}
+                  </p>
                 </div>
               </div>
             ))}
@@ -122,8 +128,12 @@ export const Services: React.FC = () => {
 
           <div className="mt-6 sm:mt-8 text-center">
             <p className="text-gray-300 mb-4 sm:mb-5 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
-              Our doctors are committed to providing <span className="font-medium text-purple-400">personalized care</span> for all
-              your eye health needs with the highest standards of medical excellence.
+              Our doctors are committed to providing{" "}
+              <span className="font-medium text-purple-400">
+                personalized care
+              </span>{" "}
+              for all your eye health needs with the highest standards of
+              medical excellence.
             </p>
             <button
               onClick={() => {
@@ -131,7 +141,7 @@ export const Services: React.FC = () => {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-gradient-to-r from-black via-red-900 to-black hover:from-black hover:via-red-800 hover:to-black text-white font-bold py-2 px-6 rounded-md transition duration-300 cursor-pointer shadow-md border border-red-800"
+              className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-red-950 hover:via-red-800 hover:to-red-950 text-white font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-2 border border-black"
             >
               Schedule an Appointment
             </button>

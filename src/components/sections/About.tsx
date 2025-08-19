@@ -16,7 +16,11 @@ export const About: React.FC = () => {
             Dr. Ketan Patel & Dr. Reena Patel
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Veteran M.S Ophthalmic Surgeons with <span className="font-medium text-white">25 years of experience</span> in Phacosurgery and Cataract Operations
+            Veteran M.S Ophthalmic Surgeons with{" "}
+            <span className="font-medium text-white">
+              25 years of experience
+            </span>{" "}
+            in Phacosurgery and Cataract Operations
           </p>
         </div>
 
@@ -31,12 +35,32 @@ export const About: React.FC = () => {
                 className="object-cover object-top"
               />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Dr. Ketan Patel</h3>
-            <p className="text-sm sm:text-base text-gray-300 mb-1">M.S. Ophthalmic Surgeon</p>
-            <p className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4">25+ Years Experience</p>
-            <a href="tel:+919824030154" className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors">
-              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
+              Dr. Ketan Patel
+            </h3>
+            <p className="text-sm sm:text-base text-gray-300 mb-1">
+              M.S. Ophthalmic Surgeon
+            </p>
+            <p className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4">
+              25+ Years Experience
+            </p>
+            <a
+              href="tel:+919824030154"
+              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
               </svg>
               9824030154
             </a>
@@ -52,12 +76,32 @@ export const About: React.FC = () => {
                 className="object-cover object-top"
               />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Dr. Reena Patel</h3>
-            <p className="text-sm sm:text-base text-gray-300 mb-1">M.S. Ophthalmic Surgeon</p>
-            <p className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4">25+ Years Experience</p>
-            <a href="tel:+919898485037" className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors">
-              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
+              Dr. Reena Patel
+            </h3>
+            <p className="text-sm sm:text-base text-gray-300 mb-1">
+              M.S. Ophthalmic Surgeon
+            </p>
+            <p className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4">
+              25+ Years Experience
+            </p>
+            <a
+              href="tel:+919898485037"
+              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors"
+            >
+              <svg
+                className="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
               </svg>
               9898485037
             </a>
@@ -67,7 +111,14 @@ export const About: React.FC = () => {
         {/* Contact Information */}
         <div className="p-4 sm:p-8 mt-8 text-center sm:text-left bg-gradient-to-r from-black via-red-900 to-black rounded-lg border border-red-800 shadow-lg">
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-            Dr. Ketan Patel and Dr. Reena Patel are Veteran M.S Ophthalmic Surgeons with <span className="font-medium text-white">25 years of experience</span> in Phacosurgery and Cataract Operations. Their dedication to providing exceptional eye care has made them trusted specialists in Vadodara.
+            Dr. Ketan Patel and Dr. Reena Patel are Veteran M.S Ophthalmic
+            Surgeons with{" "}
+            <span className="font-medium text-white">
+              25 years of experience
+            </span>{" "}
+            in Phacosurgery and Cataract Operations. Their dedication to
+            providing exceptional eye care has made them trusted specialists in
+            Vadodara.
           </p>
         </div>
 
@@ -82,14 +133,17 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-full overflow-hidden">
             {/* Address */}
             <div className="text-center sm:text-left">
-              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">Address</h4>
+              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">
+                Address
+              </h4>
               <a
                 href="https://maps.app.goo.gl/P8FxNfQNDn1uttgi9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition duration-300 underline decoration-gray-600 hover:decoration-gray-400"
               >
-                C/O Mona Eye Hospital, 1st Floor Ankshira Apartment, Kharivav Road, Raopura, Vadodara - 390001
+                C/O Mona Eye Hospital, 1st Floor Ankshira Apartment, Kharivav
+                Road, Raopura, Vadodara - 390001
               </a>
               <div className="mt-2">
                 <a
@@ -119,7 +173,9 @@ export const About: React.FC = () => {
 
             {/* Timings */}
             <div className="text-center sm:text-left">
-              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">Timings</h4>
+              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">
+                Timings
+              </h4>
               <p className="text-gray-300">
                 <strong>Mon - Sat:</strong>
                 <br />
@@ -133,23 +189,34 @@ export const About: React.FC = () => {
 
             {/* Phone Numbers */}
             <div className="text-center sm:text-left">
-              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">Phone Numbers</h4>
+              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">
+                Phone Numbers
+              </h4>
               <div className="text-white">
                 <p className="mb-2">
-                  <strong>Dr. Ketan Patel:</strong> 
-                  <a href="tel:+919824030154" className="ml-1 hover:text-red-300 transition-colors">
+                  <strong>Dr. Ketan Patel:</strong>
+                  <a
+                    href="tel:+919824030154"
+                    className="ml-1 hover:text-red-300 transition-colors"
+                  >
                     9824030154
                   </a>
                 </p>
                 <p className="mb-2">
-                  <strong>Dr. Reena Patel:</strong> 
-                  <a href="tel:+919898485037" className="ml-1 hover:text-red-300 transition-colors">
+                  <strong>Dr. Reena Patel:</strong>
+                  <a
+                    href="tel:+919898485037"
+                    className="ml-1 hover:text-red-300 transition-colors"
+                  >
                     9898485037
                   </a>
                 </p>
                 <p>
-                  <strong>Mona Eye Hospital:</strong> 
-                  <a href="tel:+912652412748" className="ml-1 hover:text-red-300 transition-colors">
+                  <strong>Mona Eye Hospital:</strong>
+                  <a
+                    href="tel:+912652412748"
+                    className="ml-1 hover:text-red-300 transition-colors"
+                  >
                     02652412748
                   </a>
                 </p>
