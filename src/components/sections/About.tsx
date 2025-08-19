@@ -46,7 +46,7 @@ export const About: React.FC = () => {
             </p>
             <a
               href="tel:+919824030154"
-              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors"
+              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
             >
               <svg
                 className="w-4 h-4 mr-1"
@@ -87,7 +87,7 @@ export const About: React.FC = () => {
             </p>
             <a
               href="tel:+919898485037"
-              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors"
+              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
             >
               <svg
                 className="w-4 h-4 mr-1"
@@ -140,7 +140,7 @@ export const About: React.FC = () => {
                 href="https://maps.app.goo.gl/P8FxNfQNDn1uttgi9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition duration-300 underline decoration-gray-600 hover:decoration-gray-400"
+                className="text-gray-300 hover:text-white transition duration-300 underline underline-offset-4 decoration-gray-600 hover:decoration-gray-400"
               >
                 C/O Mona Eye Hospital, 1st Floor Ankshira Apartment, Kharivav
                 Road, Raopura, Vadodara - 390001
@@ -197,7 +197,7 @@ export const About: React.FC = () => {
                   <strong>Dr. Ketan Patel:</strong>
                   <a
                     href="tel:+919824030154"
-                    className="ml-1 hover:text-red-300 transition-colors"
+                    className="ml-1 hover:text-red-300 transition-colors underline underline-offset-4"
                   >
                     9824030154
                   </a>
@@ -206,7 +206,7 @@ export const About: React.FC = () => {
                   <strong>Dr. Reena Patel:</strong>
                   <a
                     href="tel:+919898485037"
-                    className="ml-1 hover:text-red-300 transition-colors"
+                    className="ml-1 hover:text-red-300 transition-colors underline underline-offset-4"
                   >
                     9898485037
                   </a>
@@ -215,7 +215,7 @@ export const About: React.FC = () => {
                   <strong>Mona Eye Hospital:</strong>
                   <a
                     href="tel:+912652412748"
-                    className="ml-1 hover:text-red-300 transition-colors"
+                    className="ml-1 hover:text-red-300 transition-colors underline underline-offset-4"
                   >
                     02652412748
                   </a>

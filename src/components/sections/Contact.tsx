@@ -199,7 +199,7 @@ export const Contact: React.FC = () => {
             <div className="text-center">
               <a
                 href="tel:+919824030154"
-                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors"
+                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
               >
                 <svg
                   className="w-4 h-4 mr-1"
@@ -221,7 +221,7 @@ export const Contact: React.FC = () => {
             <div className="text-center">
               <a
                 href="tel:+919898485037"
-                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors"
+                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
               >
                 <svg
                   className="w-4 h-4 mr-1"
@@ -243,7 +243,7 @@ export const Contact: React.FC = () => {
             <div className="text-center">
               <a
                 href="tel:+912652412748"
-                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors"
+                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
               >
                 <svg
                   className="w-4 h-4 mr-1"
