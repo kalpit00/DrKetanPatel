@@ -266,7 +266,7 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-gradient-to-r from-black via-blue-900 to-black rounded-lg shadow-lg p-6 sm:p-8 border border-blue-800">
+        <div className="bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 rounded-lg shadow-lg p-6 sm:p-8 border border-blue-800">
           <h3 className="text-2xl font-bold text-center text-white mb-6">
             Send Us a Message
           </h3>
@@ -357,7 +357,7 @@ export const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
+                className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-emerald-950 hover:via-emerald-800 hover:to-emerald-950 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>

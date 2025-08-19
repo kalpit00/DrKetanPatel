@@ -141,7 +141,7 @@ export const Services: React.FC = () => {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-red-950 hover:via-red-800 hover:to-red-950 text-white font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-2 border border-black"
+              className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-emerald-950 hover:via-emerald-800 hover:to-emerald-950 text-white font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-2 border border-black"
             >
               Schedule an Appointment
             </button>
