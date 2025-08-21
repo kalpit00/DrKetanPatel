@@ -24,10 +24,7 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section
-      id="services"
-      className="py-20 bg-gradient-to-r from-black via-green-900 to-black"
-    >
+    <section id="services" className="py-20 bg-gradient-to-r via-green-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative">
           <span className="text-white relative z-10">Our Services</span>
@@ -46,7 +43,7 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-purple-900 to-black rounded-lg shadow-lg p-3 sm:p-4 md:p-6 transition-transform duration-300 hover:-translate-y-2 card-hover"
+              className="bg-gradient-to-br from-gray-950 via-purple-950 to-gray-950 rounded-lg shadow-lg p-3 sm:p-4 md:p-6 transition-transform duration-300 hover:-translate-y-2 card-hover"
             >
               <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-red-800 to-red-950 rounded-full flex items-center justify-center shadow-inner">
                 {service.icon ? (
@@ -83,7 +80,7 @@ export const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-16 bg-gradient-to-r from-black via-purple-900 to-black rounded-lg shadow-lg p-4 sm:p-8 border border-purple-800">
+        <div className="mt-8 sm:mt-16 bg-gradient-to-r from-slate-950 via-teal-950 to-slate-950 rounded-lg shadow-lg p-4 sm:p-8">
           <h3 className="text-2xl font-bold text-center text-white mb-6 tracking-tight">
             Additional Eye Care Services
           </h3>
@@ -99,10 +96,10 @@ export const Services: React.FC = () => {
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-purple-900 to-black hover:from-gray-900 hover:to-purple-800 rounded-lg shadow p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                className="bg-gradient-to-br from-purple-900 to-gray-950 hover:from-gray-900 hover:to-violet-800 rounded-lg shadow p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
               >
                 <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-700 via-red-800 to-black flex items-center justify-center text-white mr-3 border border-red-800">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-800 to-red-950 flex items-center justify-center text-white mr-3">
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -129,7 +126,7 @@ export const Services: React.FC = () => {
           <div className="mt-6 sm:mt-8 text-center">
             <p className="text-gray-300 mb-4 sm:mb-5 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
               Our doctors are committed to providing{" "}
-              <span className="font-medium text-purple-400">
+              <span className="font-medium text-amber-400">
                 personalized care
               </span>{" "}
               for all your eye health needs with the highest standards of
@@ -141,7 +138,7 @@ export const Services: React.FC = () => {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-emerald-950 hover:via-emerald-800 hover:to-emerald-950 text-white font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-2 border border-black"
+              className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-lime-800 hover:via-lime-700 hover:to-lime-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-2 border border-black"
             >
               Schedule an Appointment
             </button>

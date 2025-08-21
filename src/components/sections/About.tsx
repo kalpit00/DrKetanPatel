@@ -3,10 +3,7 @@ import Image from "next/image";
 
 export const About: React.FC = () => {
   return (
-    <section
-      id="about"
-      className="pt-24 pb-20 bg-gradient-to-r from-black via-green-900 to-black"
-    >
+    <section id="about" className="pt-24 pb-20 bg-gradient-to-r via-green-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight">
@@ -109,7 +106,7 @@ export const About: React.FC = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="p-4 sm:p-8 mt-8 text-center sm:text-left bg-gradient-to-r from-black via-red-900 to-black rounded-lg border border-red-800 shadow-lg">
+        <div className="p-4 sm:p-8 mt-8 text-center sm:text-left bg-gradient-to-r from-slate-950 via-cyan-950 to-slate-950 rounded-lg shadow-lg">
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
             Dr. Ketan Patel and Dr. Reena Patel are Veteran M.S Ophthalmic
             Surgeons with{" "}
@@ -122,7 +119,7 @@ export const About: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-r from-black via-blue-900 to-black rounded-lg shadow-lg p-8 mt-4 border border-blue-800">
+        <div className="bg-gradient-to-r from-slate-950 via-blue-900 to-slate-950 rounded-lg shadow-lg p-8 mt-4">
           <h3
             className="text-2xl font-bold text-white mb-6 text-center"
             id="contact-info"

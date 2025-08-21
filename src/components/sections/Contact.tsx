@@ -180,10 +180,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-20 bg-gradient-to-r from-black via-green-900 to-black"
-    >
+    <section id="contact" className="py-20 bg-gradient-to-r via-green-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative">
           <span className="text-white relative z-10">Contact Us</span>
@@ -191,7 +188,7 @@ export const Contact: React.FC = () => {
         </h2>
 
         {/* Phone Numbers Card */}
-        <div className="bg-gradient-to-r from-black via-red-900 to-black rounded-lg shadow-lg p-6 sm:p-8 border border-red-800 mb-8">
+        <div className="bg-gradient-to-r from-gray-950 via-indigo-900 to-gray-950 rounded-lg shadow-lg p-6 sm:p-8 mb-8">
           <h3 className="text-xl font-semibold text-white mb-4 text-center">
             Call Us Directly
           </h3>
@@ -266,7 +263,7 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 rounded-lg shadow-lg p-6 sm:p-8 border border-blue-800">
+        <div className="bg-gradient-to-r from-slate-900 via-sky-900 to-slate-900 rounded-lg shadow-lg p-6 sm:p-8">
           <h3 className="text-2xl font-bold text-center text-white mb-6">
             Send Us a Message
           </h3>
@@ -357,7 +354,7 @@ export const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-emerald-950 hover:via-emerald-800 hover:to-emerald-950 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
+                className="bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 hover:from-lime-700 hover:via-lime-600 hover:to-lime-700 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
