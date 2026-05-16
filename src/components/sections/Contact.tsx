@@ -34,7 +34,7 @@ const LocationView = () => {
         <div
           role="tablist"
           aria-label="Location view"
-          className="inline-flex rounded-md bg-slate-900/70 p-1 shadow-inner border border-white/10"
+          className="inline-flex rounded-md bg-slate-900/70 light:bg-slate-100 p-1 shadow-inner border border-white/10 light:border-slate-200"
         >
           <button
             type="button"
@@ -43,8 +43,8 @@ const LocationView = () => {
             onClick={() => setView("street")}
             className={`px-4 sm:px-5 py-2 text-sm sm:text-base font-medium rounded-md transition-colors cursor-pointer ${
               view === "street"
-                ? "bg-gradient-to-r from-amber-800 to-amber-700 text-white shadow"
-                : "text-blue-200 hover:text-white"
+                ? "bg-gradient-to-r from-amber-800 to-amber-700 light:from-amber-600 light:to-amber-500 text-white shadow"
+                : "text-blue-200 hover:text-white light:text-slate-600 light:hover:text-slate-900"
             }`}
           >
             Street View
@@ -56,8 +56,8 @@ const LocationView = () => {
             onClick={() => setView("map")}
             className={`px-4 sm:px-5 py-2 text-sm sm:text-base font-medium rounded-md transition-colors cursor-pointer ${
               view === "map"
-                ? "bg-gradient-to-r from-amber-800 to-amber-700 text-white shadow"
-                : "text-blue-200 hover:text-white"
+                ? "bg-gradient-to-r from-amber-800 to-amber-700 light:from-amber-600 light:to-amber-500 text-white shadow"
+                : "text-blue-200 hover:text-white light:text-slate-600 light:hover:text-slate-900"
             }`}
           >
             Map View
@@ -65,9 +65,9 @@ const LocationView = () => {
         </div>
       </div>
 
-      <div className="relative h-[300px] sm:h-[450px] md:h-[550px] bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+      <div className="relative h-[300px] sm:h-[450px] md:h-[550px] bg-gray-900 light:bg-slate-50 light:border light:border-slate-200 rounded-lg overflow-hidden shadow-lg">
         {!isMounted ? (
-          <div className="h-full w-full bg-gray-200 animate-pulse"></div>
+          <div className="h-full w-full bg-gray-200 light:bg-slate-200 animate-pulse"></div>
         ) : view === "map" ? (
           <iframe
             src={MAP_EMBED_URL}
@@ -184,23 +184,23 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-r via-green-900">
+    <section id="contact" className="py-20 bg-gradient-to-r via-green-900 light:via-emerald-100">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative">
-          <span className="text-white relative z-10">Contact Us</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10 blur-xl -z-10 transform -translate-y-1/4 scale-150"></div>
+          <span className="text-white light:text-slate-900 relative z-10">Contact Us</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10 light:from-amber-500/20 light:to-orange-500/20 blur-xl -z-10 transform -translate-y-1/4 scale-150"></div>
         </h2>
 
         {/* Phone Numbers Card */}
-        <div className="bg-gradient-to-r from-gray-950 via-indigo-900 to-gray-950 rounded-lg shadow-lg p-6 sm:p-8 mb-8">
-          <h3 className="text-xl font-semibold text-white mb-4 text-center">
+        <div className="bg-gradient-to-r from-gray-950 via-indigo-900 to-gray-950 light:from-slate-50 light:via-indigo-100 light:to-slate-50 light:border light:border-slate-200 rounded-lg shadow-lg p-6 sm:p-8 mb-8">
+          <h3 className="text-xl font-semibold text-white light:text-slate-900 mb-4 text-center">
             Call Us Directly
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="text-center">
               <a
                 href="tel:+919824030154"
-                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
+                className="text-white light:text-slate-800 font-medium flex items-center justify-center hover:text-red-300 light:hover:text-red-600 transition-colors underline underline-offset-4"
               >
                 <svg
                   className="w-4 h-4 mr-1"
@@ -222,7 +222,7 @@ export const Contact: React.FC = () => {
             <div className="text-center">
               <a
                 href="tel:+919898485037"
-                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
+                className="text-white light:text-slate-800 font-medium flex items-center justify-center hover:text-red-300 light:hover:text-red-600 transition-colors underline underline-offset-4"
               >
                 <svg
                   className="w-4 h-4 mr-1"
@@ -244,7 +244,7 @@ export const Contact: React.FC = () => {
             <div className="text-center">
               <a
                 href="tel:+912652412748"
-                className="text-white font-medium flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
+                className="text-white light:text-slate-800 font-medium flex items-center justify-center hover:text-red-300 light:hover:text-red-600 transition-colors underline underline-offset-4"
               >
                 <svg
                   className="w-4 h-4 mr-1"
@@ -267,17 +267,24 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-gradient-to-r from-slate-900 via-sky-900 to-slate-900 rounded-lg shadow-lg p-6 sm:p-8">
-          <h3 className="text-2xl font-bold text-center text-white mb-6">
+        <div className="bg-gradient-to-r from-slate-900 via-sky-900 to-slate-900 light:from-slate-50 light:via-sky-100 light:to-slate-50 light:border light:border-slate-200 rounded-lg shadow-lg p-6 sm:p-8">
+          <h3 className="text-2xl font-bold text-center text-white light:text-slate-900 mb-6">
             Send Us a Message
           </h3>
 
-          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 sm:space-y-6"
+            // Browser extensions (autofill, password managers) inject
+            // attributes like `__gcruniqueid` after SSR; suppress the
+            // hydration warning on the form and each field.
+            suppressHydrationWarning
+          >
             {/* Name Field */}
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-blue-200 mb-2"
+                className="block text-sm font-medium text-blue-200 light:text-slate-700 mb-2"
               >
                 Name
               </label>
@@ -286,10 +293,11 @@ export const Contact: React.FC = () => {
                 id="name"
                 name="name"
                 value={name}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-black bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-black light:border-slate-300 bg-blue-100 light:bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 light:focus:ring-emerald-500 light:focus:border-emerald-500 resize-none bg-gradient-to-r"
                 placeholder="Your Name"
                 required
                 onChange={handleChange}
+                suppressHydrationWarning
               />
             </div>
 
@@ -297,7 +305,7 @@ export const Contact: React.FC = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-blue-200 mb-2"
+                className="block text-sm font-medium text-blue-200 light:text-slate-700 mb-2"
               >
                 Email
               </label>
@@ -306,10 +314,11 @@ export const Contact: React.FC = () => {
                 id="email"
                 name="email"
                 value={email}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r "
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 light:border-slate-300 bg-blue-100 light:bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 light:focus:ring-emerald-500 light:focus:border-emerald-500 resize-none bg-gradient-to-r "
                 placeholder="Your Email"
                 required
                 onChange={handleChange}
+                suppressHydrationWarning
               />
             </div>
 
@@ -317,7 +326,7 @@ export const Contact: React.FC = () => {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-blue-200 mb-2"
+                className="block text-sm font-medium text-blue-200 light:text-slate-700 mb-2"
               >
                 Phone
               </label>
@@ -326,10 +335,11 @@ export const Contact: React.FC = () => {
                 id="phone"
                 name="phone"
                 value={phone}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 light:border-slate-300 bg-blue-100 light:bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 light:focus:ring-emerald-500 light:focus:border-emerald-500 resize-none bg-gradient-to-r"
                 placeholder="Your Phone Number"
                 required
                 onChange={handleChange}
+                suppressHydrationWarning
               />
             </div>
 
@@ -337,7 +347,7 @@ export const Contact: React.FC = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-blue-200 mb-2"
+                className="block text-sm font-medium text-blue-200 light:text-slate-700 mb-2"
               >
                 Message
               </label>
@@ -346,10 +356,11 @@ export const Contact: React.FC = () => {
                 name="message"
                 value={message}
                 rows={5}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 bg-blue-100 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 resize-none bg-gradient-to-r"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-blue-800 light:border-slate-300 bg-blue-100 light:bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-900 light:focus:ring-emerald-500 light:focus:border-emerald-500 resize-none bg-gradient-to-r"
                 placeholder="Your Message"
                 required
                 onChange={handleChange}
+                suppressHydrationWarning
               />
             </div>
 
@@ -358,19 +369,19 @@ export const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 hover:from-lime-700 hover:via-lime-600 hover:to-lime-700 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
+                className="bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 hover:from-lime-700 hover:via-lime-600 hover:to-lime-700 light:from-emerald-600 light:via-emerald-500 light:to-emerald-600 light:hover:from-amber-600 light:hover:via-amber-500 light:hover:to-amber-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
 
               {/* Status Messages */}
               {submitStatus === "success" && (
-                <p className="mt-4 text-teal-400 font-medium">
+                <p className="mt-4 text-teal-400 light:text-emerald-700 font-medium">
                   Email sent successfully! We&apos;ll get back to you soon.
                 </p>
               )}
               {submitStatus === "error" && (
-                <p className="mt-4 text-red-400 font-medium">
+                <p className="mt-4 text-red-400 light:text-red-600 font-medium">
                   Failed to send email. Please try again or contact us directly.
                 </p>
               )}
@@ -380,7 +391,7 @@ export const Contact: React.FC = () => {
 
         {/* Location Section */}
         <div id="location" className="mt-16">
-          <h3 className="text-2xl font-bold text-center text-white mb-6">
+          <h3 className="text-2xl font-bold text-center text-white light:text-slate-900 mb-6">
             Our Location
           </h3>
 
@@ -390,12 +401,12 @@ export const Contact: React.FC = () => {
               {hospitalSpaces.map((space) => (
                 <div
                   key={space.title}
-                  className="group bg-gradient-to-br from-gray-950 via-purple-950/40 to-gray-950 rounded-lg overflow-hidden shadow-lg border border-white/5 transition-transform duration-300 hover:-translate-y-1"
+                  className="group bg-gradient-to-br from-gray-950 via-purple-950/40 to-gray-950 light:from-slate-50 light:via-indigo-100 light:to-slate-50 rounded-lg overflow-hidden shadow-lg border border-white/5 light:border-slate-200 transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <p className="text-center pt-4 pb-1 sm:pt-4 sm:pb-2 text-sm sm:text-base font-medium leading-none bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent">
+                  <p className="text-center pt-4 pb-1 sm:pt-4 sm:pb-2 text-sm sm:text-base font-medium leading-none bg-gradient-to-r from-red-400 to-amber-300 light:from-red-700 light:to-amber-600 bg-clip-text text-transparent">
                     {space.title}
                   </p>
-                  <div className="relative aspect-[3/4] bg-gray-950 overflow-hidden">
+                  <div className="relative aspect-[3/4] bg-gray-950 light:bg-slate-100 overflow-hidden">
                     <Image
                       src={space.src}
                       alt={space.alt}

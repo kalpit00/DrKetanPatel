@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,17 +31,37 @@ export const viewport = {
   userScalable: true,
 };
 
+// Inline script that runs BEFORE React hydrates so the correct theme class is
+// already on <html>, preventing a flash of incorrect theme on reload.
+// Resolution order:
+//   1. localStorage("theme")  ("light" | "dark") — returning visitors
+//   2. fallback to light (default for first-time visitors)
+const themeBootstrap = `
+(function() {
+  try {
+    var stored = localStorage.getItem('theme');
+    var theme = stored === 'light' || stored === 'dark' ? stored : 'light';
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+    }
+  } catch (e) { /* no-op */ }
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+      </head>
       <body
         className={`${montserrat.variable} ${poppins.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

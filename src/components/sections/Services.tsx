@@ -30,15 +30,15 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-r via-green-900">
+    <section id="services" className="py-20 bg-gradient-to-r via-green-900 light:via-emerald-100">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative">
-          <span className="text-white relative z-10">Our Services</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10 blur-xl -z-10 transform -translate-y-1/4 scale-150"></div>
+          <span className="text-white light:text-slate-900 relative z-10">Our Services</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10 light:from-amber-500/20 light:to-orange-500/20 blur-xl -z-10 transform -translate-y-1/4 scale-150"></div>
         </h2>
-        <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-center text-gray-300 light:text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed">
           With over{" "}
-          <span className="font-medium text-red-400">
+          <span className="font-medium text-red-400 light:text-red-600">
             25 years of experience
           </span>
           , our doctors provide exceptional eye care services using the latest
@@ -49,7 +49,7 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-gray-950 via-purple-950 to-gray-950 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 card-hover"
+              className="group bg-gradient-to-br from-gray-950 via-purple-950 to-gray-950 light:from-slate-50 light:via-indigo-100 light:to-slate-50 light:border light:border-slate-200 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 card-hover"
             >
               {/* Service Image */}
               <div className="relative w-full h-48 sm:h-64 md:h-80 overflow-hidden">
@@ -61,13 +61,13 @@ export const Services: React.FC = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Bottom fade so the image blends into the card */}
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-gray-950 pointer-events-none"></div>
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-gray-950 light:to-slate-50 pointer-events-none"></div>
               </div>
 
               {/* Card Content */}
               <div className="relative px-3 sm:px-4 md:px-6 pb-4 sm:pb-5 md:pb-6">
                 {/* Icon overlapping the image edge */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto -mt-7 sm:-mt-8 mb-4 bg-gradient-to-r from-red-800 to-red-950 rounded-full flex items-center justify-center shadow-lg ring-4 ring-gray-950">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto -mt-7 sm:-mt-8 mb-4 bg-gradient-to-br from-red-800 to-red-950 light:from-slate-100 light:to-slate-200 rounded-full flex items-center justify-center shadow-lg ring-4 ring-gray-950 light:ring-2 light:ring-slate-200 light:shadow-md">
                   {service.icon ? (
                     <Image
                       src={service.icon}
@@ -77,7 +77,7 @@ export const Services: React.FC = () => {
                     />
                   ) : (
                     <svg
-                      className="w-8 h-8 text-red-400"
+                      className="w-8 h-8 text-red-400 light:text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -92,10 +92,10 @@ export const Services: React.FC = () => {
                     </svg>
                   )}
                 </div>
-                <h3 className="text-xl font-bold text-center bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent mb-3">
+                <h3 className="text-xl font-bold text-center bg-gradient-to-r from-red-400 to-amber-300 light:from-red-700 light:to-amber-600 bg-clip-text text-transparent mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 text-center leading-relaxed">
+                <p className="text-gray-300 light:text-slate-600 text-center leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -103,8 +103,8 @@ export const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-16 bg-gradient-to-r from-slate-950 via-teal-950 to-slate-950 rounded-lg shadow-lg p-4 sm:p-8">
-          <h3 className="text-2xl font-bold text-center text-white mb-6 tracking-tight">
+        <div className="mt-8 sm:mt-16 bg-gradient-to-r from-slate-950 via-teal-950 to-slate-950 light:from-slate-50 light:via-teal-100 light:to-slate-50 light:border light:border-slate-200 rounded-lg shadow-lg p-4 sm:p-8">
+          <h3 className="text-2xl font-bold text-center text-white light:text-slate-900 mb-6 tracking-tight">
             Additional Eye Care Services
           </h3>
 
@@ -119,10 +119,10 @@ export const Services: React.FC = () => {
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-purple-900 to-gray-950 hover:from-gray-900 hover:to-violet-800 rounded-lg shadow p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                className="bg-gradient-to-br from-purple-900 to-gray-950 hover:from-gray-900 hover:to-violet-800 light:from-slate-50 light:to-indigo-100 light:hover:from-indigo-50 light:hover:to-indigo-200 light:border light:border-slate-200 rounded-lg shadow light:shadow-sm p-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
               >
                 <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-800 to-red-950 flex items-center justify-center text-white mr-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-800 to-red-950 light:from-emerald-500 light:to-emerald-600 flex items-center justify-center text-white mr-3 shrink-0 shadow light:shadow-sm">
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -138,7 +138,7 @@ export const Services: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-center bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent font-medium">
+                  <p className="text-center bg-gradient-to-r from-red-400 to-amber-300 light:from-red-700 light:to-amber-600 bg-clip-text text-transparent font-medium">
                     {service}
                   </p>
                 </div>
@@ -147,9 +147,9 @@ export const Services: React.FC = () => {
           </div>
 
           <div className="mt-6 sm:mt-8 text-center">
-            <p className="text-gray-300 mb-4 sm:mb-5 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+            <p className="text-gray-300 light:text-slate-700 mb-4 sm:mb-5 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
               Our doctors are committed to providing{" "}
-              <span className="font-medium text-amber-400">
+              <span className="font-medium text-amber-400 light:text-amber-700">
                 personalized care
               </span>{" "}
               for all your eye health needs with the highest standards of
@@ -161,7 +161,7 @@ export const Services: React.FC = () => {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-lime-800 hover:via-lime-700 hover:to-lime-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-2 border border-black"
+              className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 hover:from-lime-800 hover:via-lime-700 hover:to-lime-800 light:from-amber-600 light:via-amber-500 light:to-amber-600 light:hover:from-emerald-600 light:hover:via-emerald-500 light:hover:to-emerald-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300 cursor-pointer shadow-md hover:shadow-lg hover:-translate-y-2 border border-black light:border-transparent"
             >
               Schedule an Appointment
             </button>

@@ -1,19 +1,26 @@
 @import "tailwindcss";
 
+/*
+ * Custom Tailwind v4 variant: `light:`
+ * Applies whenever an ancestor (or the element itself) has the `.light` class.
+ * The site is dark-first; adding `.light` to <html> opts into light theme.
+ */
+@custom-variant light (&:where(.light, .light *));
+
 :root {
-  /* Base colors */
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --secondary: #6366f1;
-  --accent: #10b981;
-  --text-light: #6b7280;
-  
+  /* Dark theme tokens (default) */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #f59e0b;       /* amber */
+  --primary-dark: #b45309;
+  --secondary: #ef4444;     /* red */
+  --accent: #10b981;        /* emerald */
+  --text-light: #9ca3af;
+
   /* Fonts */
   --heading-font: var(--font-montserrat);
   --body-font: var(--font-poppins);
-  
+
   /* Global variables */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -21,11 +28,15 @@
   --font-heading: var(--heading-font);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Light theme token overrides */
+.light {
+  --background: #eef2f5;    /* slightly cooler than slate-100 — gives cards air */
+  --foreground: #0f172a;    /* slate-900 */
+  --primary: #d97706;
+  --primary-dark: #b45309;
+  --secondary: #b91c1c;
+  --accent: #047857;
+  --text-light: #64748b;    /* slate-500 */
 }
 
 html, body {
@@ -37,6 +48,8 @@ html, body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  /* Smooth theme switch */
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,6 +77,11 @@ p {
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+}
+
+.light .card-hover:hover {
+  /* Subtler, slate-tinted shadow for light surfaces */
+  box-shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.12), 0 8px 12px -6px rgba(15, 23, 42, 0.08);
 }
 
 /* Fix container width and prevent horizontal overflow on mobile */

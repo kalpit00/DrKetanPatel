@@ -3,18 +3,18 @@ import Image from "next/image";
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="pt-24 pb-20 bg-gradient-to-r via-green-900">
+    <section id="about" className="pt-24 pb-20 bg-gradient-to-r via-green-900 light:via-emerald-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-white light:text-slate-900 mb-3 tracking-tight">
             Mona Eye Hospital
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-5">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white light:text-slate-800 mb-5">
             Dr. Ketan Patel & Dr. Reena Patel
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 light:text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Veteran M.S Ophthalmic Surgeons with{" "}
-            <span className="font-medium text-white">
+            <span className="font-medium text-white light:text-slate-900">
               25 years of experience
             </span>{" "}
             in Phacosurgery and Cataract Operations
@@ -32,18 +32,18 @@ export const About: React.FC = () => {
                 className="object-cover object-top"
               />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-white light:text-slate-900 mb-1 sm:mb-2">
               Dr. Ketan Patel
             </h3>
-            <p className="text-sm sm:text-base text-gray-300 mb-1">
+            <p className="text-sm sm:text-base text-gray-300 light:text-slate-600 mb-1">
               M.S. Ophthalmic Surgeon
             </p>
-            <p className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4">
+            <p className="text-sm sm:text-base text-gray-300 light:text-slate-600 mb-2 sm:mb-4">
               25+ Years Experience
             </p>
             <a
               href="tel:+919824030154"
-              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
+              className="text-white light:text-emerald-700 font-medium mb-4 flex items-center justify-center hover:text-red-300 light:hover:text-red-600 transition-colors underline underline-offset-4"
             >
               <svg
                 className="w-4 h-4 mr-1"
@@ -73,18 +73,18 @@ export const About: React.FC = () => {
                 className="object-cover object-top"
               />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-white light:text-slate-900 mb-1 sm:mb-2">
               Dr. Reena Patel
             </h3>
-            <p className="text-sm sm:text-base text-gray-300 mb-1">
+            <p className="text-sm sm:text-base text-gray-300 light:text-slate-600 mb-1">
               M.S. Ophthalmic Surgeon
             </p>
-            <p className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-4">
+            <p className="text-sm sm:text-base text-gray-300 light:text-slate-600 mb-2 sm:mb-4">
               25+ Years Experience
             </p>
             <a
               href="tel:+919898485037"
-              className="text-white font-medium mb-4 flex items-center justify-center hover:text-red-300 transition-colors underline underline-offset-4"
+              className="text-white light:text-emerald-700 font-medium mb-4 flex items-center justify-center hover:text-red-300 light:hover:text-red-600 transition-colors underline underline-offset-4"
             >
               <svg
                 className="w-4 h-4 mr-1"
@@ -106,11 +106,11 @@ export const About: React.FC = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="p-4 sm:p-8 mt-8 text-center sm:text-left bg-gradient-to-r from-slate-950 via-cyan-950 to-slate-950 rounded-lg shadow-lg">
-          <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+        <div className="p-4 sm:p-8 mt-8 text-center sm:text-left bg-gradient-to-r from-slate-950 via-cyan-950 to-slate-950 light:from-slate-50 light:via-cyan-100 light:to-slate-50 light:border light:border-slate-200 rounded-lg shadow-lg">
+          <p className="text-gray-300 light:text-slate-700 text-lg mb-8 leading-relaxed">
             Dr. Ketan Patel and Dr. Reena Patel are Veteran M.S Ophthalmic
             Surgeons with{" "}
-            <span className="font-medium text-white">
+            <span className="font-medium text-white light:text-slate-900">
               25 years of experience
             </span>{" "}
             in Phacosurgery and Cataract Operations. Their dedication to
@@ -119,9 +119,9 @@ export const About: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-r from-slate-950 via-blue-900 to-slate-950 rounded-lg shadow-lg p-8 mt-4">
+        <div className="bg-gradient-to-r from-slate-950 via-blue-900 to-slate-950 light:from-slate-50 light:via-sky-100 light:to-slate-50 light:border light:border-slate-200 rounded-lg shadow-lg p-8 mt-4">
           <h3
-            className="text-2xl font-bold text-white mb-6 text-center"
+            className="text-2xl font-bold text-white light:text-slate-900 mb-6 text-center"
             id="contact-info"
           >
             Contact Information
@@ -130,14 +130,14 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-full overflow-hidden">
             {/* Address */}
             <div className="text-center sm:text-left">
-              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">
+              <h4 className="text-xl font-semibold text-white light:text-slate-900 mb-3 tracking-tight">
                 Address
               </h4>
               <a
                 href="https://maps.app.goo.gl/P8FxNfQNDn1uttgi9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition duration-300 underline underline-offset-4 decoration-gray-600 hover:decoration-gray-400"
+                className="text-gray-300 light:text-slate-700 hover:text-white light:hover:text-emerald-700 transition duration-300 underline underline-offset-4 decoration-gray-600 light:decoration-slate-400 hover:decoration-gray-400 light:hover:decoration-emerald-500"
               >
                 C/O Mona Eye Hospital, 1st Floor Ankshira Apartment, Kharivav
                 Road, Raopura, Vadodara - 390001
@@ -147,7 +147,7 @@ export const About: React.FC = () => {
                   href="https://www.google.com/maps/@22.3021127,73.1979235,3a,75y,146.86h,94.87t/data=!3m6!1e1!3m4!1s8jtqaHXDEWglXhn_qGfVbQ!2e0!7i13312!8i6656?entry=ttu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition duration-300 text-sm flex items-center"
+                  className="text-gray-400 light:text-slate-600 hover:text-white light:hover:text-emerald-700 transition duration-300 text-sm flex items-center"
                 >
                   <svg
                     className="w-4 h-4 mr-1"
@@ -170,49 +170,49 @@ export const About: React.FC = () => {
 
             {/* Timings */}
             <div className="text-center sm:text-left">
-              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">
+              <h4 className="text-xl font-semibold text-white light:text-slate-900 mb-3 tracking-tight">
                 Timings
               </h4>
-              <p className="text-gray-300">
-                <strong>Mon - Sat:</strong>
+              <p className="text-gray-300 light:text-slate-700">
+                <strong className="light:text-slate-900">Mon - Sat:</strong>
                 <br />
                 12:30 pm - 2:30 pm
                 <br />
                 5:30 pm - 7:00 pm
                 <br />
-                <strong>Sun:</strong> Closed
+                <strong className="light:text-slate-900">Sun:</strong> Closed
               </p>
             </div>
 
             {/* Phone Numbers */}
             <div className="text-center sm:text-left">
-              <h4 className="text-xl font-semibold text-white mb-3 tracking-tight">
+              <h4 className="text-xl font-semibold text-white light:text-slate-900 mb-3 tracking-tight">
                 Phone Numbers
               </h4>
-              <div className="text-white">
+              <div className="text-white light:text-slate-700">
                 <p className="mb-2">
-                  <strong>Dr. Ketan Patel:</strong>
+                  <strong className="light:text-slate-900">Dr. Ketan Patel:</strong>
                   <a
                     href="tel:+919824030154"
-                    className="ml-1 hover:text-red-300 transition-colors underline underline-offset-4"
+                    className="ml-1 hover:text-red-300 light:text-emerald-700 light:hover:text-red-600 transition-colors underline underline-offset-4"
                   >
                     9824030154
                   </a>
                 </p>
                 <p className="mb-2">
-                  <strong>Dr. Reena Patel:</strong>
+                  <strong className="light:text-slate-900">Dr. Reena Patel:</strong>
                   <a
                     href="tel:+919898485037"
-                    className="ml-1 hover:text-red-300 transition-colors underline underline-offset-4"
+                    className="ml-1 hover:text-red-300 light:text-emerald-700 light:hover:text-red-600 transition-colors underline underline-offset-4"
                   >
                     9898485037
                   </a>
                 </p>
                 <p>
-                  <strong>Mona Eye Hospital:</strong>
+                  <strong className="light:text-slate-900">Mona Eye Hospital:</strong>
                   <a
                     href="tel:+912652412748"
-                    className="ml-1 hover:text-red-300 transition-colors underline underline-offset-4"
+                    className="ml-1 hover:text-red-300 light:text-emerald-700 light:hover:text-red-600 transition-colors underline underline-offset-4"
                   >
                     02652412748
                   </a>
