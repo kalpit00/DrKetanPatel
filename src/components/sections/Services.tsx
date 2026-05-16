@@ -8,18 +8,24 @@ export const Services: React.FC = () => {
       description:
         "Advanced phacoemulsification with premium intraocular lens implantation for clearer vision and reduced dependency on glasses.",
       icon: "/images/cataract.svg",
+      image: "/images/ketan-surgery.jpg",
+      imageAlt: "Dr. Ketan performing cataract surgery",
     },
     {
       title: "Phacosurgery",
       description:
         "Specialized surgical procedures using state-of-the-art phacoemulsification technology for precise and effective treatment.",
       icon: "/images/phaco.svg",
+      image: "/images/reena-surgery.jpg",
+      imageAlt: "Dr. Reena performing phacosurgery",
     },
     {
       title: "Comprehensive Eye Checkup",
       description:
         "Complete evaluation of eye health including visual acuity, refraction, intraocular pressure, and retinal examination.",
       icon: "/images/checkup.svg",
+      image: "/images/machine.png",
+      imageAlt: "Advanced ophthalmic examination machine",
     },
   ];
 
@@ -43,39 +49,56 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-gray-950 via-purple-950 to-gray-950 rounded-lg shadow-lg p-3 sm:p-4 md:p-6 transition-transform duration-300 hover:-translate-y-2 card-hover"
+              className="group bg-gradient-to-br from-gray-950 via-purple-950 to-gray-950 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 card-hover"
             >
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-red-800 to-red-950 rounded-full flex items-center justify-center shadow-inner">
-                {service.icon ? (
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={32}
-                    height={32}
-                  />
-                ) : (
-                  <svg
-                    className="w-8 h-8 text-red-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                )}
+              {/* Service Image */}
+              <div className="relative w-full h-48 sm:h-64 md:h-80 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Bottom fade so the image blends into the card */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-gray-950 pointer-events-none"></div>
               </div>
-              <h3 className="text-xl font-bold text-center bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-300 text-center leading-relaxed">
-                {service.description}
-              </p>
+
+              {/* Card Content */}
+              <div className="relative px-3 sm:px-4 md:px-6 pb-4 sm:pb-5 md:pb-6">
+                {/* Icon overlapping the image edge */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto -mt-7 sm:-mt-8 mb-4 bg-gradient-to-r from-red-800 to-red-950 rounded-full flex items-center justify-center shadow-lg ring-4 ring-gray-950">
+                  {service.icon ? (
+                    <Image
+                      src={service.icon}
+                      alt={service.title}
+                      width={32}
+                      height={32}
+                    />
+                  ) : (
+                    <svg
+                      className="w-8 h-8 text-red-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-center bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 text-center leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

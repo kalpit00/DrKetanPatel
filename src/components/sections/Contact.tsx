@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import Image from "next/image";
 
@@ -9,131 +9,135 @@ const initialState = {
   message: "",
 };
 
-// Client-side only component for the Google Maps iframe
-const MapComponent = () => {
+const STREET_VIEW_URL =
+  "https://www.google.com/maps/@22.3021127,73.1979235,3a,75y,146.86h,94.87t/data=!3m6!1e1!3m4!1s8jtqaHXDEWglXhn_qGfVbQ!2e0!7i13312!8i6656?entry=ttu";
+
+const MAP_EMBED_URL =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.1741603396644!2d73.19345!3d22.2988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8ab28a2e1ad%3A0x3a0b9c5c2d7a2a2a!2sMona%20Eye%20Hospital!5e0!3m2!1sen!2sin!4v1617000000000!5m2!1sen!2sin";
+
+// Combined map + street view pane with a toggle. The map is loaded as a Google
+// Maps iframe, while the street view is a static screenshot (linking out to the
+// live Google Street View) since embedding interactive Street View requires an
+// API key.
+const LocationView = () => {
+  const [view, setView] = useState<"map" | "street">("map");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) {
-    return <div className="h-full w-full bg-gray-200 animate-pulse"></div>;
-  }
-
   return (
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.1741603396644!2d73.19345!3d22.2988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8ab28a2e1ad%3A0x3a0b9c5c2d7a2a2a!2sMona%20Eye%20Hospital!5e0!3m2!1sen!2sin!4v1617000000000!5m2!1sen!2sin"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
-  );
-};
-
-// Simple carousel component
-interface CarouselImage {
-  src: string;
-  alt: string;
-  style?: {
-    objectFit: "cover" | "contain" | "fill" | "none" | "scale-down";
-    objectPosition: string;
-  };
-}
-
-const SimpleCarousel = ({ images }: { images: CarouselImage[] }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  }, [images.length]);
-
-  const goToPrev = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  }, [images.length]);
-
-  return (
-    <div className="relative h-[250px] sm:h-96 bg-gray-900 rounded-lg overflow-hidden">
-      {/* Current image */}
-      <div className="relative h-full w-full">
-        <Image
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt}
-          fill
-          sizes="100%"
-          style={
-            images[currentIndex].style || {
-              objectFit: "cover",
-              objectPosition: "center",
-            }
-          }
-        />
+    <div>
+      {/* Toggle */}
+      <div className="flex justify-center mb-3 sm:mb-4">
+        <div
+          role="tablist"
+          aria-label="Location view"
+          className="inline-flex rounded-md bg-slate-900/70 p-1 shadow-inner border border-white/10"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={view === "street"}
+            onClick={() => setView("street")}
+            className={`px-4 sm:px-5 py-2 text-sm sm:text-base font-medium rounded-md transition-colors cursor-pointer ${
+              view === "street"
+                ? "bg-gradient-to-r from-amber-800 to-amber-700 text-white shadow"
+                : "text-blue-200 hover:text-white"
+            }`}
+          >
+            Street View
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={view === "map"}
+            onClick={() => setView("map")}
+            className={`px-4 sm:px-5 py-2 text-sm sm:text-base font-medium rounded-md transition-colors cursor-pointer ${
+              view === "map"
+                ? "bg-gradient-to-r from-amber-800 to-amber-700 text-white shadow"
+                : "text-blue-200 hover:text-white"
+            }`}
+          >
+            Map View
+          </button>
+        </div>
       </div>
 
-      {/* Navigation buttons */}
-      <button
-        onClick={goToPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 text-white rounded-r-md hover:bg-black/70 transition-colors"
-        aria-label="Previous image"
-      >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-
-      <button
-        onClick={goToNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 text-white rounded-l-md hover:bg-black/70 transition-colors"
-        aria-label="Next image"
-      >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
-
-      {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full ${
-              index === currentIndex ? "bg-white" : "bg-white/50"
-            }`}
-            aria-label={`Go to image ${index + 1}`}
-          />
-        ))}
+      <div className="relative h-[300px] sm:h-[450px] md:h-[550px] bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+        {!isMounted ? (
+          <div className="h-full w-full bg-gray-200 animate-pulse"></div>
+        ) : view === "map" ? (
+          <iframe
+            src={MAP_EMBED_URL}
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        ) : (
+          <a
+            href={STREET_VIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block h-full w-full group"
+            aria-label="Open street view in Google Maps"
+          >
+            <Image
+              src="/images/street.png"
+              alt="Hospital Street View - Mona Eye Hospital"
+              fill
+              sizes="100%"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+            <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md flex items-center gap-1.5 group-hover:bg-black/90 transition-colors">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              Open in Google Maps
+            </div>
+          </a>
+        )}
       </div>
     </div>
   );
 };
+
+const hospitalSpaces = [
+  {
+    src: "/images/waiting-room.png",
+    title: "Waiting Room",
+    alt: "Hospital Waiting Room",
+  },
+  {
+    src: "/images/OR.png",
+    title: "Operating Room",
+    alt: "Operating Room",
+  },
+  {
+    src: "/images/office.png",
+    title: "Office",
+    alt: "Doctor's Office",
+  },
+  {
+    src: "/images/entrance.jpg",
+    title: "Entrance",
+    alt: "Hospital Entrance with Timings",
+  },
+];
 
 export const Contact: React.FC = () => {
   const [{ name, email, phone, message }, setState] = useState(initialState);
@@ -143,7 +147,7 @@ export const Contact: React.FC = () => {
   >("idle");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
@@ -162,7 +166,7 @@ export const Contact: React.FC = () => {
         "drketanpatel",
         "template_v8mbcli",
         e.currentTarget,
-        "SlKaoEFS8KI6mSnkU"
+        "SlKaoEFS8KI6mSnkU",
       )
       .then(
         (result) => {
@@ -175,7 +179,7 @@ export const Contact: React.FC = () => {
           console.log(error.text);
           setSubmitStatus("error");
           setIsSubmitting(false);
-        }
+        },
       );
   };
 
@@ -380,45 +384,36 @@ export const Contact: React.FC = () => {
             Our Location
           </h3>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-16 max-w-full overflow-hidden">
-            {/* Map */}
-            <div className="h-[250px] sm:h-96 bg-gray-900 rounded-lg overflow-hidden shadow-lg">
-              <MapComponent />
+          <div className="flex flex-col gap-8 sm:gap-10 mb-8 sm:mb-16 max-w-full overflow-hidden">
+            {/* Hospital Spaces Gallery */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+              {hospitalSpaces.map((space) => (
+                <div
+                  key={space.title}
+                  className="group bg-gradient-to-br from-gray-950 via-purple-950/40 to-gray-950 rounded-lg overflow-hidden shadow-lg border border-white/5 transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <p className="text-center pt-4 pb-1 sm:pt-4 sm:pb-2 text-sm sm:text-base font-medium leading-none bg-gradient-to-r from-red-400 to-amber-300 bg-clip-text text-transparent">
+                    {space.title}
+                  </p>
+                  <div className="relative aspect-[3/4] bg-gray-950 overflow-hidden">
+                    <Image
+                      src={space.src}
+                      alt={space.alt}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "center",
+                      }}
+                      className="transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Hospital Images Carousel */}
-            <div>
-              <div className="h-[350px] sm:h-96 rounded-lg overflow-hidden shadow-lg">
-                <SimpleCarousel
-                  images={[
-                    {
-                      src: "/images/entrance.jpg",
-                      alt: "Hospital Entrance with Timings",
-                      style: {
-                        objectFit: "cover",
-                        objectPosition: "top",
-                      },
-                    },
-                    {
-                      src: "/images/hospital.jpg",
-                      alt: "Hospital Interior",
-                      style: {
-                        objectFit: "cover",
-                        objectPosition: "center",
-                      },
-                    },
-                    {
-                      src: "/images/street.png",
-                      alt: "Hospital Street View",
-                      style: {
-                        objectFit: "cover",
-                        objectPosition: "center",
-                      },
-                    },
-                  ]}
-                />
-              </div>
-            </div>
+            {/* Map + Street View Toggle */}
+            <LocationView />
           </div>
         </div>
       </div>
