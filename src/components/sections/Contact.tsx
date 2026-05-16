@@ -20,7 +20,7 @@ const MAP_EMBED_URL =
 // live Google Street View) since embedding interactive Street View requires an
 // API key.
 const LocationView = () => {
-  const [view, setView] = useState<"map" | "street">("map");
+  const [view, setView] = useState<"map" | "street">("street");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -184,10 +184,15 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-r via-green-900 light:via-emerald-100">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-r via-green-900 light:via-emerald-100"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative">
-          <span className="text-white light:text-slate-900 relative z-10">Contact Us</span>
+          <span className="text-white light:text-slate-900 relative z-10">
+            Contact Us
+          </span>
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10 light:from-amber-500/20 light:to-orange-500/20 blur-xl -z-10 transform -translate-y-1/4 scale-150"></div>
         </h2>
 
@@ -369,7 +374,7 @@ export const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 hover:from-lime-700 hover:via-lime-600 hover:to-lime-700 light:from-emerald-600 light:via-emerald-500 light:to-emerald-600 light:hover:from-amber-600 light:hover:via-amber-500 light:hover:to-amber-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
+                className="bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 hover:from-lime-700 hover:via-lime-700 hover:to-lime-700 light:from-amber-600 light:via-amber-500 light:to-amber-600 light:hover:from-emerald-600 light:hover:via-emerald-500 light:hover:to-emerald-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 disabled:opacity-70 cursor-pointer shadow-md"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
